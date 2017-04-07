@@ -1,12 +1,6 @@
 # spoti-react
 Aplicación web que permite buscar los preview de cualquier canción.
 
-## Realizar eject: 
-Para personalizar la configuración de nuestra app, y mantener las dependencias completas de nuestro proyecto.
-Nota: Al realizar esta acción, no es posible regresar al estado anterior.
-
-`npm run eject`
-
 ## Instalar dependencias:
 
 `npm install`
@@ -19,3 +13,8 @@ Nota: Al realizar esta acción, no es posible regresar al estado anterior.
 
 `npm run build`
 
+## Realizar eject: 
+Para personalizar la configuración de nuestra app, y mantener las dependencias completas de nuestro proyecto.
+Nota: Al realizar esta acción, no es posible regresar al estado anterior.
+
+`npm run eject`
