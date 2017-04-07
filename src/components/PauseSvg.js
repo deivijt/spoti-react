@@ -1,7 +1,6 @@
 import React from 'react'
 
 function PauseSvg ({pauseTrack, isTrackPlaying, trackPaused}) {
-  console.log(trackPaused)
   let display = trackPaused && isTrackPlaying ? 'u-displayBlock' : 'u-displayNone'
   return (
     <svg width="35px" height="35px" className={display} onClick={pauseTrack} viewBox="901 369 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

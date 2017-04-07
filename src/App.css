@@ -8,14 +8,14 @@
 }
 
 .Container {
-  width: 700px;
+  width: 70%;
   display: flex;
   flex-direction: column;
 }
 
 .Header {
   width: 220px;
-  height: 170px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,7 +31,7 @@
 }
 
 .Search{
-  width: 350px;
+  width: 90%;
   position: relative;
   margin: 0 auto;
 }
@@ -55,6 +55,12 @@
 
 .Search input::placeholder {
   color: #A5A7AA;
+}
+
+.Loading {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
 }
 
 .Tracks {
@@ -185,5 +191,17 @@
 
 .u-displayBlock {
   display: inline-block !important;
+}
+
+/* Medaqueries */
+
+@media only screen and (min-width: 1000px) {
+  .Container {
+    width: 700px;
+  }
+
+  .Search {
+    width: 350px;
+  }
 }
 

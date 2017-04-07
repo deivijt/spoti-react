@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       tracks: [],
       trackPlaying: '',
-      trackPaused: false
+      trackPaused: false,
+      loading: false
     }
 
     this.searchTracks = this.searchTracks.bind(this)
@@ -26,10 +27,13 @@ class App extends Component {
     let {value} = target
 
     if (value) {
+      this.setState({loading: true})
       let results = await window.fetch(`${this.baseUrl}/search?q=${value}&type=track`)
       let {tracks} = await results.json()
 
-      this.setState({tracks: tracks.items})
+      this.setState({tracks: tracks.items}, () => {
+        this.setState({loading: false})
+      })
     }
   }
 
@@ -67,13 +71,17 @@ class App extends Component {
         <Header />
         <div className='Container'>
           <Search searchTracks={this.searchTracks} />
-          <Tracks
-            tracks={this.state.tracks}
-            playTrack={this.playTrack}
-            pauseTrack={this.pauseTrack}
-            trackPlaying={this.state.trackPlaying}
-            trackPaused={this.state.trackPaused}
-          />
+          {
+            !this.state.loading ? (
+              <Tracks
+                tracks={this.state.tracks}
+                playTrack={this.playTrack}
+                pauseTrack={this.pauseTrack}
+                trackPlaying={this.state.trackPlaying}
+                trackPaused={this.state.trackPaused}
+              />
+            ) : <span className='Loading'>Cargando...</span>
+          }
         </div>
       </section>
     )
