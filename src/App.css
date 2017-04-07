@@ -1,0 +1,189 @@
+.Main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../public/background.jpg);
+}
+
+.Container {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header {
+  width: 220px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header h1 {
+  color: #fff;
+  font-size: 1.8em;
+}
+
+.Header h1 span {
+  color: #00D64E;
+}
+
+.Search{
+  width: 350px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.Search > svg {
+  position: absolute;
+  top: 14px;
+  left: 15px;
+}
+
+.Search input {
+  box-sizing: border-box;
+  padding: 10px 5px 10px 40px;
+  font-size: 1em;
+  font-weight: lighter;
+  width: 100%;
+  margin: 0 auto;
+  color: inherit;
+  outline: none;
+}
+
+.Search input::placeholder {
+  color: #A5A7AA;
+}
+
+.Tracks {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
+  height: 430px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.Track {
+  width: 216px;
+  height: 198px;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.Track__info {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  color: #fff;
+  z-index: 7;
+}
+
+.Track__info h4 {
+  font-weight: normal;
+  margin: 0 0 5px 0;
+}
+
+.Track__info svg {
+  cursor: pointer;
+}
+
+/*.Track__info svg:nth-child(3) {
+  display: none;
+}*/
+
+.Track > span {
+  background: linear-gradient(0deg, black, 70%, transparent);
+  height: 130px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+}
+
+/* Waves animation */
+
+.Waves {
+  background: #fff;
+  position: relative;
+  transform: translate(68px, 195px);
+  z-index: 7;
+}
+.Waves span {
+  animation: audio-wave 1.5s infinite ease-in-out;
+  background: #00D64E;
+  /* position */
+  bottom: calc(50% - 0.313em);
+  position: absolute;
+  /* box model */
+  display: block;
+  height: 0.313em;
+  width: 0.563em;
+}
+.Waves span:nth-child(1) {
+  left: 0em;
+  animation-delay: 0s;
+}
+.Waves span:nth-child(2) {
+  left: 0.688em;
+  animation-delay: 0.2s;
+}
+.Waves span:nth-child(3) {
+  left: 1.376em;
+  animation-delay: 0.4s;
+}
+.Waves span:nth-child(4) {
+  left: 2.064em;
+  animation-delay: 0.6s;
+}
+.Waves span:nth-child(5) {
+  left: 2.752em;
+  animation-delay: 0.8s;
+}
+.Waves span:nth-child(6) {
+  left: 3.44em;
+  animation-delay: 1s;
+}
+.Waves span:nth-child(7) {
+  left: 4.128em;
+  animation-delay: 1.2s;
+}
+
+@keyframes audio-wave {
+  0% {
+    height: 0.313em;
+    transform: translateY(0px);
+  }
+  25% {
+    height: 2.500em;
+    transform: translateY(1.25em);
+  }
+  50% {
+    height: 0.313em;
+    transform: translateY(0px);
+  }
+  100% {
+    height: 0.313em;
+    transform: translateY(0px);
+  }
+}
+
+/* Utilities */
+
+.u-displayNone {
+  display: none !important;
+}
+
+.u-displayBlock {
+  display: inline-block !important;
+}
+
